@@ -1,6 +1,10 @@
+from flask import render_template
+
 from app import app
+
 
 @app.route('/')
 @app.route('/mirror')
 def index():
-    return "Hello, World!"
+    user = {'username': 'Rares'}
+    return render_template('mirror.html', user=user)
