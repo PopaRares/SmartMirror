@@ -2,10 +2,17 @@ from flask import render_template
 
 from app import app
 
+data = {'isFace': 0}
+
 
 @app.route('/')
 @app.route('/mirror')
 def index():
-    user = {'username': 'Rares'}
-    font_url = 'https://fonts.googleapis.com/css?family=Montserrat&display=swap'
-    return render_template('mirror.html', user=user, font_url=font_url)
+    user = {"username": "Rares"}
+    return render_template('mirror.html', data=data, user=user)
+
+
+@app.route("/getFace", methods=['GET'])
+def getFace():
+    data['isFace'] = not data['isFace']
+    return data
