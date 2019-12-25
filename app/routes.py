@@ -1,3 +1,5 @@
+from threading import Thread
+
 from flask import render_template
 
 from app import app
@@ -14,5 +16,4 @@ def index():
 
 @app.route("/getFace", methods=['GET'])
 def getFace():
-    data['isFace'] = not data['isFace']
     return data
