@@ -1,5 +1,5 @@
 let isFace;
-let opacity;
+let open = true;
 
 function toggleOpacity() {
 
@@ -7,19 +7,18 @@ function toggleOpacity() {
         "/getFace",
         function (data) {
             isFace = data.isFace;
-            opacity = $(document.body).css("opacity");
-            // if(isFace && opacity === 1) {
-            //     console.log("[INFO] MIRROR POWERING UP");
-            //    $(document.body).animate({opacity: 1}, 1000);
-            // }
-            // if(!isFace && opacity === 0){
-            //     console.log("[INFO] MIRROR SHUTTING DOWN");
-            //     $(document.body).animate({opacity: 0}, 1000);
-            // }
             if(isFace) {
-                $(document.body).animate({opacity: 1}, 1000);
+                if(!open) {
+                    open = true;
+                    console.log("MIRROR POWERING UP");
+                    $(document.body).animate({opacity: 1}, 1000);
+                }
             } else {
-                $(document.body).animate({opacity: 0}, 1000);
+                if(open){
+                    open = false;
+                    console.log("MIRROR SHUTTING DOWN");
+                    $(document.body).animate({opacity: 0}, 1000);
+                }
             }
         }
     );
