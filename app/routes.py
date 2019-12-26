@@ -4,7 +4,9 @@ from flask import render_template
 
 from app import app
 
-data = {'isFace': 0}
+import shared_data as shared
+
+data = {'isFace': False}
 
 
 @app.route('/')
@@ -16,4 +18,5 @@ def index():
 
 @app.route("/getFace", methods=['GET'])
 def getFace():
+    data['isFace'] = shared.face
     return data
