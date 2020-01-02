@@ -11,7 +11,7 @@ data = {'isFace': False}
 @app.route('/')
 @app.route('/mirror')
 def index():
-    user = {"username": "Rares"}
+    user = {"username": "1"}
     return render_template('mirror.html', data=data, user=user)
 
 
