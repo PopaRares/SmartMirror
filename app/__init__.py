@@ -1,7 +1,10 @@
-import threading
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+
+shared = {
+    "face": False,
+    "face_id": 0
+}
 
 app = Flask(__name__)
 app.static_folder = 'static'

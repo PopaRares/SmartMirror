@@ -2,9 +2,8 @@ from threading import Thread
 
 from flask import render_template
 
-from app import app
+from app import app, shared
 
-import shared_data as shared
 
 data = {'isFace': False}
 
@@ -18,5 +17,5 @@ def index():
 
 @app.route("/getFace", methods=['GET'])
 def getFace():
-    data['isFace'] = shared.face
+    data['isFace'] = shared['face']
     return data

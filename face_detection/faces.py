@@ -1,6 +1,6 @@
 import cv2 as cv
 
-import shared_data as shared
+from app import shared
 
 
 def detect():
@@ -32,7 +32,7 @@ def detect():
             hits = 0
             has_face = True
 
-        shared.face = has_face
+        shared['face'] = has_face
 
         draw_rectangle((255, 0, 0), faces, gray, frame)
         draw_rectangle((0, 0, 255), profile, gray, frame)
