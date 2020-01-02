@@ -1,4 +1,5 @@
 import cv2 as cv
+import pickle
 
 from app import shared
 
@@ -11,6 +12,11 @@ def detect():
 
     recogniser = cv.face.LBPHFaceRecognizer_create()
     recogniser.read("face_detection/trainer.yml")
+
+    face_ids = {}
+    with open("face_detection/labels.pkl", "rb") as f:
+        og_labels = pickle.load(f)
+        face_ids = {v: k for k, v in og_labels.items()}
 
     cap = cv.VideoCapture(0)
     threshold = 10
@@ -36,11 +42,17 @@ def detect():
             hits = 0
             has_face = True
 
+            recogniser_id, conf = recogniser.predict(gray)
+            print("ID: %s, Conf: %f" % (face_ids[recogniser_id], conf))
+            if conf >= detection_threshold:
+                shared['face_id'] = face_ids[recogniser_id]
+            else:
+                shared['face_id'] = 0
+                print("Unknown face")
+
         shared['face'] = has_face
 
-        id_, conf = recogniser.predict(gray)
-        if conf >= detection_threshold:
-            shared['face_id'] = id_
+
 
         draw_rectangle((255, 0, 0), faces, gray, frame)
         draw_rectangle((0, 0, 255), profile, gray, frame)
