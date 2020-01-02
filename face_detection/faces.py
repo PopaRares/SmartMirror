@@ -1,7 +1,6 @@
 import cv2 as cv
 import pickle
-
-from app import shared
+from app import Config, Shared
 
 show_frame = True
 
@@ -23,7 +22,6 @@ def detect():
     detection_threshold = 45
     hits = 0
     has_face = False
-
     while True:
         ret, frame = cap.read()
         gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
@@ -36,23 +34,19 @@ def detect():
         # no face
         if isinstance(faces, tuple) and isinstance(profile, tuple):
             hits = hits + 1
-            if hits >= threshold:
-                has_face = False
+            if hits >= Config.FACE_DETECTION_MISSED_HITS:
+                Shared.FACE_EXISTS = False
         else:
             hits = 0
-            has_face = True
+            Shared.FACE_EXISTS = True
 
             recogniser_id, conf = recogniser.predict(gray)
             print("ID: %s, Conf: %f" % (face_ids[recogniser_id], conf))
             if conf >= detection_threshold:
-                shared['face_id'] = face_ids[recogniser_id]
+                Shared.FACE_ID = face_ids[recogniser_id]
             else:
-                shared['face_id'] = 0
+                Shared.FACE_ID = 0
                 print("Unknown face")
-
-        shared['face'] = has_face
-
-
 
         draw_rectangle((255, 0, 0), faces, gray, frame)
         draw_rectangle((0, 0, 255), profile, gray, frame)
@@ -69,7 +63,6 @@ def detect():
 
 def draw_rectangle(color, detection, feed, frame):
     for (x, y, w, h) in detection:
-        roi_gray = feed[y:y + h, x:x + w]  # region of interest
         end_x = x + w
         end_y = y + h
         cv.rectangle(frame, (x, y), (end_x, end_y), color, 2)
