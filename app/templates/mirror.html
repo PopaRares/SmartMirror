@@ -1,11 +1,18 @@
 <html>
     <head>
         <title>SmartMirror</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename= 'styles/style.css') }}">
-
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'styles/style.css') }}">
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'styles/blocks.css') }}">
+        <link rel="stylesheet" href="{{ font_url }}">
     </head>
-    <body>
-        <h1>Hello, {{ user.username }}!</h1>
+    <body onload="startTime()">
+        <div class="col-5 height-5 float-left text-align-center">
+            <h1 class="header-font">Salut</h1>
+            <h1>Hello, {{ user.username }}!</h1>
+            <hr>
+            <p class="orbitron big-clock" id="clock"></p>
+        </div>
     </body>
+
+    <script src="{{ url_for('static', filename='scripts/clock-mechanism.js')}}"></script>
 </html>
