@@ -1,10 +1,11 @@
 let isFace;
 let open = false;
+let data = {};
 
 function toggleOpacity() {
 
     $.getJSON(
-        "/getFace",
+        "/getData",
         function (data) {
             isFace = data.isFace;
             if(isFace) {
@@ -43,13 +44,29 @@ function checkTime(i) {
 
 function greet() {
   $.getJSON(
-        "/getFace",
+        "/getData",
         function (data) {
             var nume = data.name
             document.getElementById('greet').innerHTML = "Hello " + nume + "!";
         }
     );
 }
+
+function saveData(sharedData) {
+    console.log(sharedData);
+    data = sharedData;
+}
+
+function getData() {
+  $.getJSON(
+        "/getData",
+        function (sharedData) {
+            saveData(sharedData);
+        }
+    );
+}
+
+$(document).ready(setInterval(getData, 500));
 
 $(document).ready(setInterval(toggleOpacity, 1000));
 $(document).ready(setInterval(greet, 500));
