@@ -11,7 +11,7 @@ def index():
     return render_template('mirror.html', font_url="https://fonts.googleapis.com/css?family=Montserrat&display=swap")
 
 
-@app.route("/getFace", methods=['GET'])
+@app.route("/getData", methods=['GET'])
 def getFace():
     data['isFace'] = Shared.FACE_EXISTS
     if Shared.CURRENT_USER is None:
