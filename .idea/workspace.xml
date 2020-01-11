@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b97c3ba7-7a3c-4ff2-9047-3eba5e85490a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/scripts/mirror_mechanism.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/scripts/mirror_mechanism.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +136,7 @@
       <workItem from="1578565056433" duration="5759000" />
       <workItem from="1578743793970" duration="1858000" />
       <workItem from="1578757939217" duration="1117000" />
-      <workItem from="1578768257136" duration="3850000" />
+      <workItem from="1578768257136" duration="4185000" />
     </task>
     <servers />
   </component>
@@ -162,22 +161,22 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1578768296909" />
-    <state width="1874" height="257" key="GridCell.Tab.0.bottom" timestamp="1578780753100">
+    <state width="1874" height="257" key="GridCell.Tab.0.bottom" timestamp="1578781087909">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="257" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1578780753100" />
-    <state width="1874" height="257" key="GridCell.Tab.0.center" timestamp="1578780753099">
+    <state width="1874" height="257" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1578781087909" />
+    <state width="1874" height="257" key="GridCell.Tab.0.center" timestamp="1578781087908">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="257" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1578780753099" />
-    <state width="1874" height="257" key="GridCell.Tab.0.left" timestamp="1578780753099">
+    <state width="1874" height="257" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1578781087908" />
+    <state width="1874" height="257" key="GridCell.Tab.0.left" timestamp="1578781087907">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="257" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1578780753099" />
-    <state width="1874" height="257" key="GridCell.Tab.0.right" timestamp="1578780753099">
+    <state width="1874" height="257" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1578781087907" />
+    <state width="1874" height="257" key="GridCell.Tab.0.right" timestamp="1578781087908">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="257" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1578780753099" />
+    <state width="1874" height="257" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1578781087908" />
     <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1578778925685">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -197,6 +196,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SmartMirror$SmartMirror.coverage" NAME="SmartMirror Coverage Results" MODIFIED="1578768278975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SmartMirror$mirror.coverage" NAME="mirror Coverage Results" MODIFIED="1578780753074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SmartMirror$mirror.coverage" NAME="mirror Coverage Results" MODIFIED="1578781087886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
