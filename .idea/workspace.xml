@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b97c3ba7-7a3c-4ff2-9047-3eba5e85490a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/static/styles/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/weather.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SmartMirror.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/clock.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/clock.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/mirror.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/mirror.html" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +33,11 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -63,19 +56,7 @@
       <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Flask server.SmartMirror">
+  <component name="RunManager" selected="Python.mirror">
     <configuration name="mirror" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="SmartMirror" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -89,7 +70,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/__init__.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mirror.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -100,11 +81,11 @@
     </configuration>
     <configuration name="SmartMirror" type="Python.FlaskServer">
       <module name="SmartMirror" />
-      <option name="target" value="$PROJECT_DIR$/app/__init__.py" />
+      <option name="target" value="$PROJECT_DIR$/mirror.py" />
       <option name="targetType" value="PATH" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -122,6 +103,18 @@
         <item itemvalue="Python.mirror" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -141,6 +134,7 @@
       <workItem from="1578565056433" duration="5759000" />
       <workItem from="1578743793970" duration="1858000" />
       <workItem from="1578757939217" duration="1117000" />
+      <workItem from="1578768257136" duration="41000" />
     </task>
     <servers />
   </component>
@@ -160,8 +154,30 @@
       </map>
     </option>
   </component>
+  <component name="WindowStateProjectService">
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578768296909">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1578768296909" />
+    <state width="1874" height="257" key="GridCell.Tab.0.bottom" timestamp="1578768374418">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="257" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1578768374418" />
+    <state width="1874" height="257" key="GridCell.Tab.0.center" timestamp="1578768374417">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="257" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1578768374417" />
+    <state width="1874" height="257" key="GridCell.Tab.0.left" timestamp="1578768374417">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="257" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1578768374417" />
+    <state width="1874" height="257" key="GridCell.Tab.0.right" timestamp="1578768374418">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="257" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1578768374418" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SmartMirror$mirror.coverage" NAME="mirror Coverage Results" MODIFIED="1576784085051" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/SmartMirror$SmartMirror.coverage" NAME="SmartMirror Coverage Results" MODIFIED="1578758323979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SmartMirror$SmartMirror.coverage" NAME="SmartMirror Coverage Results" MODIFIED="1578768278975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/SmartMirror$mirror.coverage" NAME="mirror Coverage Results" MODIFIED="1578768374384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
