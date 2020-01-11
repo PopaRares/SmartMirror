@@ -1,5 +1,5 @@
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'sqlite=///../DB/mirror.sqlite'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///../DB/mirror.sqlite'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SHOW_FRAME = True
     FACE_DETECTION_MISSED_HITS = 10

@@ -1,6 +1,7 @@
 import cv2 as cv
 import pickle
 from app import Config, Shared
+from app.user import User
 
 show_frame = True
 
@@ -18,10 +19,9 @@ def detect():
         face_ids = {v: k for k, v in og_labels.items()}
 
     cap = cv.VideoCapture(0)
-    threshold = 10
     detection_threshold = 45
     hits = 0
-    has_face = False
+    face_id = 0
     while True:
         ret, frame = cap.read()
         gray = cv.cvtColor(frame, cv.COLOR_BGR2GRAY)
@@ -43,10 +43,14 @@ def detect():
             recogniser_id, conf = recogniser.predict(gray)
             print("ID: %s, Conf: %f" % (face_ids[recogniser_id], conf))
             if conf >= detection_threshold:
-                Shared.FACE_ID = face_ids[recogniser_id]
+                face_id = face_ids[recogniser_id]
             else:
-                Shared.FACE_ID = 0
+                face_id = 0
                 print("Unknown face")
+
+        if face_id != Shared.FACE_ID:
+            Shared.FACE_ID = face_id
+            Shared.CURRENT_USER = User.query.get(face_id)
 
         draw_rectangle((255, 0, 0), faces, gray, frame)
         draw_rectangle((0, 0, 255), profile, gray, frame)
