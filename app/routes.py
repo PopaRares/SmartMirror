@@ -1,8 +1,7 @@
-from threading import Thread
 from flask import render_template
 from app import app, Shared
-from datetime import datetime
-
+from app.user import User
+import json
 data = {}
 
 
@@ -15,5 +14,8 @@ def index():
 @app.route("/getFace", methods=['GET'])
 def getFace():
     data['isFace'] = Shared.FACE_EXISTS
-    #data['user'] = Shared.CURRENT_USER
+    if Shared.CURRENT_USER is None:
+        data['name'] = "stranger"
+    else:
+        data['name'] = Shared.CURRENT_USER.name
     return data

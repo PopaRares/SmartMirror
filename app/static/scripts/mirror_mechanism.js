@@ -7,7 +7,6 @@ function toggleOpacity() {
         "/getFace",
         function (data) {
             isFace = data.isFace;
-            console.log(data);
             if(isFace) {
                 if(!open) {
                     open = true;
@@ -43,14 +42,13 @@ function checkTime(i) {
 }
 
 function greet() {
-  var name = "stranger";
-  // $.getJSON(
-  //       "/getFace",
-  //       function (data) {
-  //         console.log(data)
-  //       }
-  //   );
-  document.getElementById('greet').innerHTML = "Hello " + name + "!";
+  $.getJSON(
+        "/getFace",
+        function (data) {
+            var nume = data.name
+            document.getElementById('greet').innerHTML = "Hello " + nume + "!";
+        }
+    );
 }
 
 $(document).ready(setInterval(toggleOpacity, 1000));
