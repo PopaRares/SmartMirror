@@ -3,9 +3,6 @@ import pickle
 from app import Config, Shared
 from app.user import User
 
-show_frame = True
-
-
 def detect():
     face_cascade = cv.CascadeClassifier('face_detection/cascades/haarcascade_frontalface_alt.xml')
     profile_cascade = cv.CascadeClassifier('face_detection/cascades/haarcascade_profileface.xml')
@@ -19,7 +16,6 @@ def detect():
         face_ids = {v: k for k, v in og_labels.items()}
 
     cap = cv.VideoCapture(0)
-    detection_threshold = 45
     hits = 0
     face_id = 0
     while True:
@@ -41,12 +37,10 @@ def detect():
             Shared.FACE_EXISTS = True
 
             recogniser_id, conf = recogniser.predict(gray)
-            print("ID: %s, Conf: %f" % (face_ids[recogniser_id], conf))
-            if conf >= detection_threshold:
+            if conf >= Config.FACE_RECOGNITION_THRESHOLD:
                 face_id = face_ids[recogniser_id]
             else:
                 face_id = 0
-                print("Unknown face")
 
         if face_id != Shared.FACE_ID:
             Shared.FACE_ID = face_id
@@ -56,7 +50,7 @@ def detect():
         draw_rectangle((0, 0, 255), profile, gray, frame)
         draw_rectangle((0, 0, 255), profileFlipped, grayFlipped, frame)  # should be flipped?
 
-        if show_frame:
+        if Config.SHOW_FRAME:
             cv.imshow('frame', frame)
             if cv.waitKey(20) & 0xFF == ord('q'):
                 break
