@@ -19,10 +19,10 @@ def getForecast(location_key):
 
 
 def getLocation():
-    hostname = socket.gethostname()
-    IPAddr = socket.gethostbyname(hostname)
+    ip = requests.get('https://api.ipify.org').text
     URL = Config.WEATHER_URL + 'locations/v1/cities/ipaddress'
-    PARAMS = {'apikey': Config.WEATHER_API_KEY, 'q': IPAddr}
+    print(ip)
+    PARAMS = {'apikey': Config.WEATHER_API_KEY, 'q': ip}
 
     data = requests.get(url=URL, params=PARAMS).json()
     return data

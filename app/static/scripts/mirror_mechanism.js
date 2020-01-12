@@ -57,13 +57,24 @@ function getData() {
 }
 
 function updateWeatherOnScreen() {
+    var temperature = data.weather_now[0].Temperature.Metric.Value;
+    var weatherText = data.weather_now[0].WeatherText;
+    var precipitation = data.weather_now[0].PrecipitationType;
+
+    var finalText = '<h2>' + weatherText + ', ' + temperature + 'C' + '</h2>';
+
+    if(precipitation !== null) finalText += '<h2>It is ' + precipitation + '.';
+    if(temperature < 10) finalText += '<h2>Wear a jacket!</h2>';
+
+    console.log(finalText);
+    document.getElementById('weather').innerHTML = finalText;
 }
 
 function updateWeatherData() {
     $.getJSON(
         "/weather",
         function (weatherResponse) {
-                if(weatherResponse['update'] === 'SUCCESSFUL') {
+                if(weatherResponse['update'] === 'SUCCESS') {
                     updateWeatherOnScreen();
                 }
                 console.log('Weather update: ' + weatherResponse['update']);
@@ -76,4 +87,6 @@ $(document).ready(setInterval(getData, 500));
 $(document).ready(setInterval(toggleOpacity, 1000));
 $(document).ready(setInterval(greet, 500));
 $(document).ready(setInterval(startTime, 500));
-$(document).ready(setInterval(updateWeatherData, 6000));
+$(document).ready(setInterval(updateWeatherData, 3600000));//one hour
+
+$(document).ready(updateWeatherData);
