@@ -49,9 +49,24 @@ function saveData(sharedData) {
 
 function getData() {
     $.getJSON(
-        "/getData",
+        "/data",
         function (sharedData) {
             saveData(sharedData);
+        }
+    );
+}
+
+function updateWeatherOnScreen() {
+}
+
+function updateWeatherData() {
+    $.getJSON(
+        "/weather",
+        function (weatherResponse) {
+                if(weatherResponse['update'] === 'SUCCESSFUL') {
+                    updateWeatherOnScreen();
+                }
+                console.log('Weather update: ' + weatherResponse['update']);
         }
     );
 }
@@ -61,3 +76,4 @@ $(document).ready(setInterval(getData, 500));
 $(document).ready(setInterval(toggleOpacity, 1000));
 $(document).ready(setInterval(greet, 500));
 $(document).ready(setInterval(startTime, 500));
+$(document).ready(setInterval(updateWeatherData, 6000));
