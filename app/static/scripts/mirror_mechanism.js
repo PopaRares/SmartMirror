@@ -45,6 +45,9 @@ function greet() {
 function saveData(sharedData) {
     console.log(sharedData);
     data = sharedData;
+    if(data.hasOwnProperty("weather_forecast")) {
+        updateWeatherOnScreen();
+    }
 }
 
 function getData() {
@@ -61,12 +64,26 @@ function updateWeatherOnScreen() {
     var weatherText = data.weather_now[0].WeatherText;
     var precipitation = data.weather_now[0].PrecipitationType;
 
-    var finalText = '<h2>' + weatherText + ', ' + temperature + 'C' + '</h2>';
+    var finalText = '<h2>' + weatherText + ', ' + temperature + 'C°' + '</h2>';
 
     if(precipitation !== null) finalText += '<h2>It is ' + precipitation + '.';
     if(temperature < 10) finalText += '<h2>Wear a jacket!</h2>';
 
-    console.log(finalText);
+    finalText += "<ul>";
+    forecast = data.weather_forecast;
+    var i;
+    for (i = 2; i < forecast.length; i += 3) {
+        finalText += "<li>";
+        var date = new Date(forecast[i].DateTime);
+        hours = ("0" + date.getHours()).slice(-2);
+        finalText += "<p>" + hours + ":00</p>";
+        finalText += "<p>" + forecast[i].IconPhrase + ", " + forecast[i].Temperature.Value +"C°</p>";
+        finalText += "<p>Precipitation probability: " + forecast[i].PrecipitationProbability + "%</p>";
+
+        finalText += "</li>";
+    }
+    finalText += "</ul>";
+
     document.getElementById('weather').innerHTML = finalText;
 }
 

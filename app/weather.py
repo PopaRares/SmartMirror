@@ -1,5 +1,4 @@
 from app import Config
-import socket
 import requests
 
 
@@ -9,6 +8,7 @@ def getWeatherNow(location_key):
 
     data = requests.get(url=URL, params=PARAMS).json()
     return data
+
 
 def getForecast(location_key):
     URL = Config.WEATHER_URL + 'forecasts/v1/hourly/12hour/' + location_key
@@ -21,7 +21,6 @@ def getForecast(location_key):
 def getLocation():
     ip = requests.get('https://api.ipify.org').text
     URL = Config.WEATHER_URL + 'locations/v1/cities/ipaddress'
-    print(ip)
     PARAMS = {'apikey': Config.WEATHER_API_KEY, 'q': ip}
 
     data = requests.get(url=URL, params=PARAMS).json()

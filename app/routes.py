@@ -25,7 +25,6 @@ def getWeather():
     location_data = weather.getLocation()
     if location_data is not None and 'Key' in location_data:
         location_key = location_data['Key']
-        print(location_key)
         status = 'SUCCESS'
         data['weather_now'] = weather.getWeatherNow(location_key)
         data['weather_forecast'] = weather.getForecast(location_key)
